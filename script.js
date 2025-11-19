@@ -8,7 +8,7 @@ const resultContent = document.getElementById('result-content');
 function getProfileData(username) {
     return fetch(`https://api.github.com/users/${username}`)
         .then((raw) => {
-            // if (!raw.ok) throw new Error("User not found.");
+            if (!raw.ok) throw new Error("User not found.");
             return raw.json();
         });
 }
